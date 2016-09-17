@@ -1,3 +1,9 @@
 /target/
 /.settings
 /.project
+/.idea
+/.project
+/.classpath
+/.metadata
+/RemoteSystemsTempFiles
+/ecommerce.iml
