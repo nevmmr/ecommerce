@@ -29,6 +29,7 @@ public class Initializer implements WebApplicationInitializer {
 		
 		Dynamic servlet = servletContext.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(ctx));
 		servlet.addMapping("/");
+		Runnable r2 = () -> System.out.println("Hello world two!");
 		servlet.setLoadOnStartup(1);
 		
 	}
