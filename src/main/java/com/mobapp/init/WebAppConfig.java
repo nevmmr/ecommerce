@@ -1,13 +1,5 @@
 package com.mobapp.init;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Properties;
-
-import javax.annotation.Resource;
-import javax.sql.DataSource;
-
 import org.hibernate.ejb.HibernatePersistence;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -30,7 +22,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
-import org.springframework.web.servlet.view.json.MappingJacksonJsonView;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
+
+import javax.annotation.Resource;
+import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
@@ -129,12 +128,12 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 	
 	/**
 	* View resolver for returning JSON in a view-based system. Always returns a
-	* {@link MappingJacksonJsonView}.
+	* {@link MappingJackson2JsonView}.
 	*/
 	public class JsonViewResolver implements ViewResolver {
 		public View resolveViewName(String viewName, Locale locale)
 				throws Exception {
-				MappingJacksonJsonView view = new MappingJacksonJsonView();
+				MappingJackson2JsonView view = new MappingJackson2JsonView();
 				view.setPrettyPrint(true);
 				return view;
 		}

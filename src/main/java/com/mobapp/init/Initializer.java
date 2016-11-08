@@ -1,17 +1,16 @@
 package com.mobapp.init;
 
-import java.util.EnumSet;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
+import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration.Dynamic;
-
-import org.springframework.web.WebApplicationInitializer;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.filter.HiddenHttpMethodFilter;
-import org.springframework.web.servlet.DispatcherServlet;
+import java.util.EnumSet;
 
 public class Initializer implements WebApplicationInitializer {
 	
@@ -29,7 +28,7 @@ public class Initializer implements WebApplicationInitializer {
 		
 		Dynamic servlet = servletContext.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(ctx));
 		servlet.addMapping("/");
-		Runnable r2 = () -> System.out.println("Hello world two!");
+		//Runnable r2 = () -> System.out.println("Hello world two!");
 		servlet.setLoadOnStartup(1);
 		
 	}
