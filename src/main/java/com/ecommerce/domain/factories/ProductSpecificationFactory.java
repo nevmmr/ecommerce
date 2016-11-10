@@ -7,9 +7,9 @@ import com.ecommerce.canonical.vo.Money;
 import com.ecommerce.ddd.annotations.domain.DomainFactory;
 import com.ecommerce.domain.entity.Client;
 import com.ecommerce.domain.entity.Product;
-import com.ecommerce.sales.equivalent.specification.SameCategory;
-import com.ecommerce.sales.equivalent.specification.SimilarName;
-import com.ecommerce.sales.equivalent.specification.SimilarPrice;
+import com.ecommerce.equivalent.specification.SameCategory;
+import com.ecommerce.equivalent.specification.SimilarName;
+import com.ecommerce.equivalent.specification.SimilarPrice;
 
 @DomainFactory
 public class ProductSpecificationFactory {
