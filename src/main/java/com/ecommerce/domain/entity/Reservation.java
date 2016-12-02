@@ -89,7 +89,29 @@ public class Reservation extends BaseAggregateRoot{
 		ReservationItem item = new ReservationItem(product, quantity);
 		items.add(item);
 	}
-
+	private void decrease(Product product, int quantity) {
+		for (ReservationItem item : items) {
+			if (item.getProduct().equals(product)){
+				item.changeQuantityBy(item.getQuantity() - quantity);
+				break;
+			}
+		}
+	}
+	
+	@Invariant({"closed", "duplicates"})
+	public void remove(Product product, int quantity){
+		if (isClosed())
+			domainError("Reservation already closed");
+				
+		if (!contains(product)){
+			domainError("Product does not exists");	
+		}
+		else{
+			decrease(product, quantity);	
+		}
+	}
+	
+	
 	private void increase(Product product, int quantity) {
 		for (ReservationItem item : items) {
 			if (item.getProduct().equals(product)){

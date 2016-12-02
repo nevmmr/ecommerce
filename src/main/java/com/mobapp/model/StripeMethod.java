@@ -2,72 +2,61 @@ package com.mobapp.model;
 
 import com.mobapp.interfaces.PaymentMethodInterface;
 
-/**
- * Created by Roman Nevmerzhitskiy on 07.10.2016.
- */
 public class StripeMethod implements PaymentMethodInterface {
-    private String paymentName;
-    private String apiToken;
-    private String creditCardNumber;
-    private String getCreditCardOwner;
-    private int creditCardExpirationYear;
-    private int creditCardExpirationMonth;
-    private int creditCardSecurity;
-    private String transactionId;
-    private String transactionResponse;
-    private String transactionStatus;
+	private String paymentName;
+	private String apiToken;
+	private String creditCardNumber;
+	private String getCreditCardOwner;
+	private int creditCardExpirationYear;
+	private int creditCardExpirationMonth;
+	private int creditCardSecurity;
+	private String transactionId;
+	private String transactionResponse;
+	private String transactionStatus;
 
-    public String getPaymentName() {
-        return paymentName;
-    }
+	public StripeMethod(String apiToken2, String creditCardNumber2, String creditCardOwner,
+			int creditCardExpirationYear2, int creditCardExpirationMonth2, int creditCardSecurity2) {
+		// TODO Auto-generated constructor stub
+	}
 
-    public String getApiToken() {
-        return apiToken;
-    }
+	public String getPaymentName() {
+		return paymentName;
+	}
 
-    public String getCreditCardNumber() {
-        return creditCardNumber;
-    }
+	public String getApiToken() {
+		return apiToken;
+	}
 
-    public String getGetCreditCardOwner() {
-        return getCreditCardOwner;
-    }
+	public String getCreditCardNumber() {
+		return creditCardNumber;
+	}
 
-    public int getCreditCardExpirationYear() {
-        return creditCardExpirationYear;
-    }
+	public String getGetCreditCardOwner() {
+		return getCreditCardOwner;
+	}
 
-    public int getCreditCardExpirationMonth() {
-        return creditCardExpirationMonth;
-    }
+	public int getCreditCardExpirationYear() {
+		return creditCardExpirationYear;
+	}
 
-    public int getCreditCardSecurity() {
-        return creditCardSecurity;
-    }
+	public int getCreditCardExpirationMonth() {
+		return creditCardExpirationMonth;
+	}
 
-    public String getTransactionId() {
-        return transactionId;
-    }
+	public int getCreditCardSecurity() {
+		return creditCardSecurity;
+	}
 
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
-    }
+	public String getTransactionId() {
+		return transactionId;
+	}
 
-    public String getTransactionResponse() {
-        return transactionResponse;
-    }
+	public String getTransactionResponse() {
+		return transactionResponse;
+	}
 
-    public void setTransactionResponse(String transactionResponse) {
-        this.transactionResponse = transactionResponse;
-    }
-
-    public String getTransactionStatus() {
-        return transactionStatus;
-    }
-
-    public void setTransactionStatus(String transactionStatus) {
-        this.transactionStatus = transactionStatus;
-    }
-
+	public String getTransactionStatus() {
+		return transactionStatus;
+	}
 
 }
